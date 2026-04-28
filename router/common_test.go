@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/ctxext"
+	"github.com/DemetriusADS/protoactor-go/ctxext"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 	"github.com/stretchr/testify/mock"
 )
 

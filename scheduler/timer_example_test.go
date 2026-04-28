@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/scheduler"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/scheduler"
 )
 
 var system = actor.NewActorSystem()

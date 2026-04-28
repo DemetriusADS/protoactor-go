@@ -9,12 +9,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/asynkron/protoactor-go/remote"
+	"github.com/DemetriusADS/protoactor-go/remote"
 
 	"github.com/asynkron/gofun/set"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 	"google.golang.org/protobuf/types/known/anypb"
 )
 

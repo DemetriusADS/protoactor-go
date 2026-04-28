@@ -1,8 +1,8 @@
 package opentelemetry
 
 import (
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/actor/middleware/propagator"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor/middleware/propagator"
 )
 
 func TracingMiddleware() actor.SpawnMiddleware {

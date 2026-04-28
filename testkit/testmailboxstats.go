@@ -3,7 +3,7 @@ package testkit
 import (
 	"sync"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 // TestMailboxStats collects mailbox events for tests.

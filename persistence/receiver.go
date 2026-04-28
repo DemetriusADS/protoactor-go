@@ -4,7 +4,7 @@ import (
 	"log"
 	"reflect"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 func Using(provider Provider) func(next actor.ReceiverFunc) actor.ReceiverFunc {

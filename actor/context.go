@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/ctxext"
+	"github.com/DemetriusADS/protoactor-go/ctxext"
 )
 
 // Context contains contextual information for actors

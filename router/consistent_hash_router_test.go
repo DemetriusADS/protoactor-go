@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/router"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/router"
 )
 
 var system = actor.NewActorSystem()

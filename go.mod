@@ -51,8 +51,6 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-metrics v0.5.4 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
-	github.com/moby/spdystream v0.5.1 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/otlptranslator v0.0.2 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect

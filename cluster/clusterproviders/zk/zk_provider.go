@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/asynkron/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/cluster"
 	"github.com/go-zookeeper/zk"
 )
 

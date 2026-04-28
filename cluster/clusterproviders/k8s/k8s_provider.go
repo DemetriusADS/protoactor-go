@@ -9,10 +9,11 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/cluster"
 	"github.com/google/uuid"
 	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
@@ -44,6 +45,7 @@ type Provider struct {
 	namespace      string
 	knownKinds     []string
 	clusterPods    map[types.UID]*v1.Pod
+	podsMu         sync.Mutex
 	port           int
 	client         *kubernetes.Clientset
 	clusterMonitor *actor.PID
@@ -430,4 +432,34 @@ func (p *Provider) retrieveNamespace() string {
 	}
 
 	return p.namespace
+}
+
+func (p *Provider) Refresh() error {
+	if p.shutdown {
+		return ErrProviderShuttingDown
+	}
+
+	selector := fmt.Sprintf("%s=%s", LabelCluster, p.clusterName)
+	podList, err := p.client.CoreV1().Pods(p.retrieveNamespace()).List(context.Background(), metav1.ListOptions{LabelSelector: selector})
+	if err != nil {
+		return fmt.Errorf("unable to list pods: %w", err)
+	}
+
+	fresh := make(map[types.UID]*v1.Pod, len(podList.Items))
+	for i := range podList.Items {
+		pod := &podList.Items[i]
+		fresh[pod.UID] = pod
+	}
+
+	p.podsMu.Lock()
+	p.clusterPods = fresh
+	if p.cluster.Logger().Enabled(context.TODO(), slog.LevelDebug) {
+		logCurrentPods(p.clusterPods, p.cluster.Logger())
+	}
+	members := mapPodsToMembers(p.clusterPods, p.cluster.Logger())
+	p.podsMu.Unlock()
+	p.cluster.Logger().Info("Topology refreshed from Kubernets", slog.Any("members", members))
+
+	p.cluster.MemberList.UpdateClusterTopology(members)
+	return nil
 }

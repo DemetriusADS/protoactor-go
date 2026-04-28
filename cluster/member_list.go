@@ -5,9 +5,9 @@ import (
 	"log/slog"
 	"sync"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/eventstream"
-	"github.com/asynkron/protoactor-go/remote"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/eventstream"
+	"github.com/DemetriusADS/protoactor-go/remote"
 	"google.golang.org/protobuf/types/known/anypb"
 )
 

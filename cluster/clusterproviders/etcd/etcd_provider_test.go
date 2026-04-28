@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/cluster"
-	"github.com/asynkron/protoactor-go/remote"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/remote"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/asynkron/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/cluster"
 )
 
 const (

@@ -1,6 +1,6 @@
 package remote
 
-import "github.com/asynkron/protoactor-go/actor"
+import "github.com/DemetriusADS/protoactor-go/actor"
 
 // func remoteHandler(pid *actor.PID) (actor.Process, bool) {
 // 	ref := newProcess(pid, nil)

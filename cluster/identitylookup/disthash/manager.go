@@ -1,9 +1,9 @@
 package disthash
 
 import (
-	"github.com/asynkron/protoactor-go/actor"
-	clustering "github.com/asynkron/protoactor-go/cluster"
-	"github.com/asynkron/protoactor-go/eventstream"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	clustering "github.com/DemetriusADS/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/eventstream"
 	"log/slog"
 	"strconv"
 	"strings"

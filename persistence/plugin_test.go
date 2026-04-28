@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

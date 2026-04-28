@@ -6,11 +6,11 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/cluster"
-	"github.com/asynkron/protoactor-go/cluster/clusterproviders/test"
-	"github.com/asynkron/protoactor-go/cluster/identitylookup/disthash"
-	"github.com/asynkron/protoactor-go/remote"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/cluster/clusterproviders/test"
+	"github.com/DemetriusADS/protoactor-go/cluster/identitylookup/disthash"
+	"github.com/DemetriusADS/protoactor-go/remote"
 	"github.com/google/uuid"
 	"golang.org/x/sync/errgroup"
 )

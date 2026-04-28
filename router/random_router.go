@@ -3,7 +3,7 @@ package router
 import (
 	"math/rand"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 type randomGroupRouter struct {

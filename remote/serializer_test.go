@@ -3,7 +3,7 @@ package remote
 import (
 	"testing"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 	"github.com/stretchr/testify/assert"
 )
 

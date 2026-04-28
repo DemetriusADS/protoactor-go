@@ -3,7 +3,7 @@ package zk
 import (
 	"sync"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 // SingletonScheduler manages actors that should only run on the leader node.

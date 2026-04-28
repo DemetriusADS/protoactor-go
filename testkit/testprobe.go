@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 // messageAndSender captures a message and its sender.

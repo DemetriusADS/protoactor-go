@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/internal/queue/mpsc"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/internal/queue/mpsc"
 	"golang.org/x/net/context"
 	"google.golang.org/protobuf/proto"
 )

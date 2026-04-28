@@ -7,10 +7,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/asynkron/protoactor-go/extensions"
+	"github.com/DemetriusADS/protoactor-go/extensions"
 
-	"github.com/asynkron/protoactor-go/actor"
-	remotemetrics "github.com/asynkron/protoactor-go/remote/metrics"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	remotemetrics "github.com/DemetriusADS/protoactor-go/remote/metrics"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
 )

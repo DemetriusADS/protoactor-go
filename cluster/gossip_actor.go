@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/asynkron/gofun/set"
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 // convenience customary type to represent an empty value

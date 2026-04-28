@@ -1,7 +1,7 @@
 package protozip
 
 import (
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 // ZipkinTracer is an outbound middleware that copies Zipkin tracing headers

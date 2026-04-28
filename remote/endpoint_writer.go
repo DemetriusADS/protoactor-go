@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 	"golang.org/x/net/context"

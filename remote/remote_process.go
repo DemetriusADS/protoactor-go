@@ -1,7 +1,7 @@
 package remote
 
 import (
-	"github.com/asynkron/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/actor"
 )
 
 type process struct {

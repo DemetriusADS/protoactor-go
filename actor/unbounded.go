@@ -1,8 +1,8 @@
 package actor
 
 import (
-	"github.com/asynkron/protoactor-go/internal/queue/goring"
-	"github.com/asynkron/protoactor-go/internal/queue/mpsc"
+	"github.com/DemetriusADS/protoactor-go/internal/queue/goring"
+	"github.com/DemetriusADS/protoactor-go/internal/queue/mpsc"
 )
 
 type unboundedMailboxQueue struct {

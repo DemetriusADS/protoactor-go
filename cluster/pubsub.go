@@ -3,8 +3,8 @@ package cluster
 import (
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/extensions"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/extensions"
 )
 
 const PubSubDeliveryName = "$pubsub-delivery"

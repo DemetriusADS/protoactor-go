@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/cluster"
-	"github.com/asynkron/protoactor-go/scheduler"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/cluster"
+	"github.com/DemetriusADS/protoactor-go/scheduler"
 	"github.com/hashicorp/consul/api"
 	"github.com/hashicorp/consul/api/watch"
 )

@@ -5,8 +5,8 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/eventstream"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/eventstream"
 	"golang.org/x/exp/maps"
 )
 

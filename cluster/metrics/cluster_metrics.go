@@ -7,7 +7,7 @@ import (
 	"log/slog"
 	"sync"
 
-	"github.com/asynkron/protoactor-go/metrics"
+	"github.com/DemetriusADS/protoactor-go/metrics"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/metric"
 )

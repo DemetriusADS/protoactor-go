@@ -4,8 +4,8 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/asynkron/protoactor-go/actor"
-	"github.com/asynkron/protoactor-go/remote"
+	"github.com/DemetriusADS/protoactor-go/actor"
+	"github.com/DemetriusADS/protoactor-go/remote"
 )
 
 type PubSubMemberDeliveryActor struct {
