@@ -280,6 +280,8 @@ func (p *Provider) watchPods(ctx context.Context, selector string) error {
 }
 
 func (p *Provider) processPodEvent(event watch.Event, pod *v1.Pod) {
+	p.podsMu.Lock()
+	defer p.podsMu.Unlock()
 	p.cluster.Logger().Debug("Watcher reported event for pod", slog.Any("eventType", event.Type), slog.String("podName", pod.Name))
 
 	podClusterName, hasClusterName := pod.Labels[LabelCluster]
@@ -452,12 +454,12 @@ func (p *Provider) Refresh() error {
 	}
 
 	p.podsMu.Lock()
+	defer p.podsMu.Unlock()
 	p.clusterPods = fresh
 	if p.cluster.Logger().Enabled(context.TODO(), slog.LevelDebug) {
 		logCurrentPods(p.clusterPods, p.cluster.Logger())
 	}
 	members := mapPodsToMembers(p.clusterPods, p.cluster.Logger())
-	p.podsMu.Unlock()
 	p.cluster.Logger().Info("Topology refreshed from Kubernets", slog.Any("members", members))
 
 	p.cluster.MemberList.UpdateClusterTopology(members)
