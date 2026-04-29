@@ -112,6 +112,7 @@ func (ml *MemberList) UpdateClusterTopology(members Members) {
 
 	topology, done, active, joined, left := ml.getTopologyChanges(members)
 	if done {
+		ml.cluster.Logger().Info("Cluster topology not updated")
 		return
 	}
 
@@ -177,6 +178,7 @@ func (ml *MemberList) getTopologyChanges(members Members) (topology *ClusterTopo
 
 	// nothing changed? exit
 	if active.Equals(ml.members) {
+		ml.cluster.Logger().Info("Cluster topology unchanged due to blocked members", slog.Int("membersFromProvider", len(members)), slog.Int("activeMembers", active.Len()), slog.Int("blockedMembers", len(blocked)))
 		return nil, true, nil, nil, nil
 	}
 
