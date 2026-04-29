@@ -318,7 +318,7 @@ func logCurrentPods(clusterPods map[types.UID]*v1.Pod, logger *slog.Logger) {
 	for _, pod := range clusterPods {
 		podNames = append(podNames, pod.Name)
 	}
-	logger.Debug("Detected cluster pods are now", slog.Int("numberOfPods", len(clusterPods)), slog.Any("podNames", podNames))
+	logger.Info("Detected cluster pods are now", slog.Int("numberOfPods", len(clusterPods)), slog.Any("podNames", podNames))
 }
 
 func mapPodsToMembers(clusterPods map[types.UID]*v1.Pod, logger *slog.Logger) []*cluster.Member {
@@ -345,7 +345,7 @@ func mapPodsToMembers(clusterPods map[types.UID]*v1.Pod, logger *slog.Logger) []
 			alive := true
 			for _, status := range clusterPod.Status.ContainerStatuses {
 				if !status.Ready {
-					logger.Debug("Pod container is not ready", slog.String("podName", clusterPod.Name), slog.String("containerName", status.Name))
+					logger.Warn("Pod container is not ready", slog.String("podName", clusterPod.Name), slog.String("containerName", status.Name))
 					alive = false
 					break
 				}
@@ -364,9 +364,11 @@ func mapPodsToMembers(clusterPods map[types.UID]*v1.Pod, logger *slog.Logger) []
 				Kinds: kinds,
 			})
 		} else {
-			logger.Debug("Pod is not in Running state", slog.String("podName", clusterPod.Name), slog.Any("podIPs", clusterPod.Status.PodIPs), slog.String("podPhase", string(clusterPod.Status.Phase)))
+			logger.Warn("Pod is not in Running state", slog.String("podName", clusterPod.Name), slog.Any("podIPs", clusterPod.Status.PodIPs), slog.String("podPhase", string(clusterPod.Status.Phase)))
 		}
 	}
+
+	logger.Info("Pods members mapped successfully", slog.Any("members", members))
 
 	return members
 }
@@ -438,12 +440,15 @@ func (p *Provider) retrieveNamespace() string {
 
 func (p *Provider) Refresh() error {
 	if p.shutdown {
+		//Log the p data
+		p.cluster.Logger().Error("Cluster provider is shutting down", slog.Any("provider", p))
 		return ErrProviderShuttingDown
 	}
-
+	p.cluster.Logger().Info("Cluster provider is refreshing")
 	selector := fmt.Sprintf("%s=%s", LabelCluster, p.clusterName)
 	podList, err := p.client.CoreV1().Pods(p.retrieveNamespace()).List(context.Background(), metav1.ListOptions{LabelSelector: selector})
 	if err != nil {
+		p.cluster.Logger().Error("Unable to list pods during refresh", slog.Any("error", err))
 		return fmt.Errorf("unable to list pods: %w", err)
 	}
 
