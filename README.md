@@ -383,12 +383,3 @@ message Response {
 Notice: always use "gogoslick_out" instead of "go_out" when generating proto code. "gogoslick_out" will create type
 names which will be used during serialization.
 
-For more examples, see the example folder in this repository.
-
-## Contributors
-
-<a href="https://github.com/DemetriusADS/protoactor-go/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=asynkron/protoactor-go" />
-</a>
-
-Made with [contributors-img](https://contributors-img.web.app). 
