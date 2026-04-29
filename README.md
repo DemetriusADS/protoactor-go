@@ -1,25 +1,3 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/DemetriusADS/protoactor-go)](https://goreportcard.com/report/github.com/DemetriusADS/protoactor-go)
-[![GoDoc](https://godoc.org/github.com/DemetriusADS/protoactor-go?status.svg)](https://godoc.org/github.com/DemetriusADS/protoactor-go)
-[![checks](https://github.com/DemetriusADS/protoactor-go/actions/workflows/checks.yml/badge.svg)](https://github.com/DemetriusADS/protoactor-go/actions/workflows/checks.yml)
-[![Sourcegraph](https://sourcegraph.com/github.com/DemetriusADS/protoactor-go/-/badge.svg)](https://sourcegraph.com/github.com/DemetriusADS/protoactor-go?badge)
-
-### [Join our Slack channel](https://join.slack.com/t/asynkron/shared_invite/zt-ko824601-yGN1d3GHF9jzZX2VtONodQ)
-
-# Cross platform actors
-
-Introducing cross platform actor support between Go and C#.
-
-Can I use this?
-The Go implementation is still in beta, there are users using Proto Actor for Go in production already.
-But be aware that the API might change over time until 1.0.
-
-## Sourcecode - Go
-
-This is the Go repository for Proto Actor.
-
-The C# implementation can be found
-here [https://github.com/asynkron/protoactor-dotnet](https://github.com/asynkron/protoactor-dotnet)
-
 ## Design principles:
 
 **Minimalistic API** -
